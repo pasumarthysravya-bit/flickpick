@@ -60,8 +60,8 @@ export const TopTenMovies = ({ profile }: TopTenMoviesProps) => {
   if (!isLoading && top10.length === 0) return null;
 
   return (
-    <section className="bg-[#141414] py-8 sm:px-6 rounded-2xl mb-12 shadow-2xl relative group/section border border-white/5 mx-4 sm:mx-0 sm:mx-6">
-      <div className="flex items-center gap-2 mb-8 text-white px-4 sm:px-0">
+    <section className="bg-[#141414] py-8 mb-12 shadow-2xl relative group/section border-y border-white/5 w-screen left-1/2 right-1/2 -mx-[50vw]">
+      <div className="max-w-7xl mx-auto flex items-center gap-2 mb-8 text-white px-4 sm:px-6">
         <Flame className="w-6 h-6 text-[#E50914] fill-[#E50914]" />
         <div>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Top 10 Movies Today</h2>
@@ -80,7 +80,7 @@ export const TopTenMovies = ({ profile }: TopTenMoviesProps) => {
 
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-8 md:gap-12 pb-10 pt-4 custom-scrollbar snap-x snap-mandatory scroll-smooth px-8 md:px-12"
+          className="flex overflow-x-auto gap-8 md:gap-12 pb-10 pt-4 custom-scrollbar snap-x snap-mandatory scroll-smooth px-4 sm:px-12 lg:px-24"
         >
           {isLoading ? (
             // Loading Skeletons

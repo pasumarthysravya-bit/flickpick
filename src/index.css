@@ -7,14 +7,14 @@
 @layer base {
   /* Dark mode (default) */
   .dark body {
-    @apply bg-dark-900 text-white font-sans antialiased;
+    @apply bg-dark-900 text-white font-sans antialiased overflow-x-hidden;
   }
 
   /* Light mode */
   .light body {
     background-color: #f5f5f5;
     color: #1a1a1a;
-    @apply font-sans antialiased;
+    @apply font-sans antialiased overflow-x-hidden;
   }
 }
 
