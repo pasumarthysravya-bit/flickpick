@@ -5,9 +5,11 @@ interface MovieGridProps {
   movies: Movie[];
   title?: string;
   horizontal?: boolean;
+  onViewAll?: () => void;
+  viewAllText?: string;
 }
 
-export const MovieGrid = ({ movies, title, horizontal = false }: MovieGridProps) => {
+export const MovieGrid = ({ movies, title, horizontal = false, onViewAll, viewAllText }: MovieGridProps) => {
   if (movies.length === 0) return null;
 
   return (
@@ -17,9 +19,14 @@ export const MovieGrid = ({ movies, title, horizontal = false }: MovieGridProps)
           <h2 className="text-xl font-bold text-white flex items-center gap-2">
             {title}
           </h2>
-          <button className="text-sm text-orange-500 hover:text-orange-400 font-medium transition-colors">
-            View All
-          </button>
+          {onViewAll && (
+            <button 
+              onClick={onViewAll}
+              className="text-sm text-orange-500 hover:text-orange-400 font-medium transition-colors"
+            >
+              {viewAllText || "View All"}
+            </button>
+          )}
         </div>
       )}
 

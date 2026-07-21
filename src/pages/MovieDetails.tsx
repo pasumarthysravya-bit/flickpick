@@ -13,6 +13,7 @@ export const MovieDetails = () => {
   const { id } = useParams<{ id: string }>();
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const [showTrailer, setShowTrailer] = useState(false);
+  const [showAllSimilar, setShowAllSimilar] = useState(false);
 
   const { data: movie, isLoading, isError } = useQuery({
     queryKey: ['movie', id],
@@ -128,7 +129,13 @@ export const MovieDetails = () => {
 
       {movie.similar?.results && movie.similar.results.length > 0 && (
         <section>
-          <MovieGrid movies={movie.similar.results.slice(0, 10)} title="Similar Movies" horizontal />
+          <MovieGrid 
+            movies={showAllSimilar ? movie.similar.results : movie.similar.results.slice(0, 10)} 
+            title="Similar Movies" 
+            horizontal={!showAllSimilar}
+            onViewAll={() => setShowAllSimilar(!showAllSimilar)}
+            viewAllText={showAllSimilar ? "Show Less" : "View All"}
+          />
         </section>
       )}
 

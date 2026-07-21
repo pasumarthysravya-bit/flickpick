@@ -8,6 +8,7 @@ import { DropdownFilter } from '../components/filters/DropdownFilter';
 import { MovieCard } from '../components/movie/MovieCard';
 import { MovieGrid } from '../components/movie/MovieGrid';
 import { FeaturedMovies } from '../components/movie/FeaturedMovies';
+import { TopTenMovies } from '../components/movie/TopTenMovies';
 
 const YEARS = Array.from({ length: new Date().getFullYear() - 1899 }, (_, i) => ({
   value: new Date().getFullYear() - i,
@@ -97,6 +98,7 @@ export const Home = () => {
   return (
     <div className="space-y-12 pb-12">
       <FeaturedMovies />
+      <TopTenMovies profile={profile} />
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold text-white mb-6">Find Movies</h2>
