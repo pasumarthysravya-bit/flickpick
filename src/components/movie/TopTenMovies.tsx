@@ -80,7 +80,7 @@ export const TopTenMovies = ({ profile }: TopTenMoviesProps) => {
 
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-8 md:gap-12 pb-10 pt-4 custom-scrollbar snap-x snap-mandatory scroll-smooth px-4 sm:px-12 lg:px-24"
+          className="flex overflow-x-auto gap-8 md:gap-12 pb-10 pt-4 snap-x snap-mandatory scroll-smooth px-4 sm:px-12 lg:px-24 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {isLoading ? (
             // Loading Skeletons
